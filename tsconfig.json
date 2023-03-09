@@ -4,6 +4,7 @@
         "target": "ESNext",
         // 生成的 js 模式
         "module": "commonjs",
-        "rootDir": "src"
+        "rootDir": "src",
+        "jsx": "react-jsx"
     }
 }
