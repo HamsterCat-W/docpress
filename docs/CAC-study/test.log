@@ -1,0 +1,340 @@
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js rm ku -f
+🚀 ~ file: test.js:17 ~ cli.command ~ dir: ku
+🚀 ~ file: test.js:15 ~ cli.command ~ options: { '--': [], type: 'node', f: true, force: true }
+{
+  "args": [
+    "ku"
+  ],
+  "options": {
+    "--": [],
+    "type": "node",
+    "f": true,
+    "force": true
+  }
+}
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js -h      
+{
+  "args": [],
+  "options": {
+    "--": [],
+    "type": "node",
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js dev --clear-screen
+🚀 ~ file: test.js:23 ~ cli.command ~ options: true
+{
+  "args": [],
+  "options": {
+    "--": [],
+    "type": "node",
+    "clearScreen": true
+  }
+}
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js dev --clearScreen 
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js build test --no-config
+{
+  "args": [
+    "test"
+  ],
+  "options": {
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js build test a.js b.js c.js --foo       
+🚀 ~ file: test.js:43 ~ cli.command ~ entry: test
+🚀 ~ file: test.js:45 ~ cli.command ~ otherFiles: [ 'a.js', 'b.js', 'c.js' ]
+🚀 ~ file: test.js:41 ~ cli.command ~ options: { '--': [], type: 'node', foo: true }
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js build --env test --env.foo foo --env.bar bar
+/Users/wangguoxuan/Documents/guoxuan/myStudyWork/vite-study/docpress/node_modules/.pnpm/cac@6.7.14/node_modules/cac/dist/index.js:196
+    t = t[keys[i]] = i === length - 1 ? val : x != null ? x : !!~keys[i + 1].indexOf(".") || !(+keys[i + 1] > -1) ? {} : [];
+                   ^
+
+TypeError: Cannot create property 'foo' on string 'test'
+    at setDotProp (/Users/wangguoxuan/Documents/guoxuan/myStudyWork/vite-study/docpress/node_modules/.pnpm/cac@6.7.14/node_modules/cac/dist/index.js:196:20)
+    at CAC.mri (/Users/wangguoxuan/Documents/guoxuan/myStudyWork/vite-study/docpress/node_modules/.pnpm/cac@6.7.14/node_modules/cac/dist/index.js:589
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js -h                                               
+test.js/v0.0.1
+
+Usage:
+  $ test.js <command> [options]
+
+Commands:
+  rm [dir]                       description
+  rm [dir]                       description
+  dev                            start dev server
+  build [build]                  build project
+  build <entry> [...otherFiles]  Build your app
+  build                          desc
+
+For more info, run any command with the `--help` flag:
+  $ test.js rm --help
+  $ test.js rm --help
+  $ test.js dev --help
+  $ test.js build --help
+  $ test.js build --help
+  $ test.js build --help
+
+Options:
+  --type <type>  Choose a project type (default: node)
+  -h, --help     Display this message 
+  -v, --version  Display version number 
+{
+  "args": [],
+  "options": {
+    "--": [],
+    "type": "node",
+    "h": true,
+    "help": true
+  }
+}
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js -h
+test.js/v0.0.1
+
+Usage:
+  $ test.js <command> [options]
+
+Commands:
+  rm [dir]                        description
+  rm [dir]                        description
+  dev                             start dev server
+  build [build]                   build project
+  build1 <entry> [...otherFiles]  Build your app
+  build2                          desc
+
+For more info, run any command with the `--help` flag:
+  $ test.js rm --help
+  $ test.js rm --help
+  $ test.js dev --help
+  $ test.js build --help
+  $ test.js build1 --help
+  $ test.js build2 --help
+
+Options:
+  --type <type>  Choose a project type (default: node)
+  -h, --help     Display this message 
+  -v, --version  Display version number 
+{
+  "args": [],
+  "options": {
+    "--": [],
+    "type": "node",
+    "h": true,
+    "help": true
+  }
+}
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js build2 --help
+test.js/v0.0.1
+
+Usage:
+  $ test.js build2
+
+Options:
+  --env <env>    set env 
+  --type <type>  Choose a project type (default: node)
+  -h, --help     Display this message 
+
+Examples:
+--env.API_SECRET XXX
+{
+  "args": [],
+  "options": {
+    "--": [],
+    "type": "node",
+    "help": true,
+    "h": true
+  }
+}
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js build2 --help
+/Users/wangguoxuan/Documents/guoxuan/myStudyWork/vite-study/docpress/src/test/test.js:57
+  .useage("hhhhhh")
+   ^
+
+TypeError: cli.command(...).option(...).example(...).useage is not a function
+    at Object.<anonymous> (/Users/wangguoxuan/Documents/guoxuan/myStudyWork/vite-study/docpress/src/test/test.js:57:4)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
+    at node:internal/main/run_main_module:23:47
+
+Node.js v18.15.0
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js build2 --help
+test.js/v0.0.1
+
+Usage:
+  $ test.js hhhhhh
+
+Options:
+  --env <env>    set env 
+  --type <type>  Choose a project type (default: node)
+  -h, --help     Display this message 
+
+Examples:
+--env.API_SECRET XXX
+{
+  "args": [],
+  "options": {
+    "--": [],
+    "type": "node",
+    "help": true,
+    "h": true
+  }
+}
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js hhhhhh       
+{
+  "args": [
+    "hhhhhh"
+  ],
+  "options": {
+    "--": [],
+    "type": "node"
+  }
+}
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js hhhhhh -h
+test.js/v0.0.1
+
+Usage:
+  $ test.js <command> [options]
+
+Commands:
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js build2       
+🚀 ~ file: test.js:54 ~ cli.command ~ options: { '--': [], type: 'node' }
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js build2 --env.test test
+🚀 ~ file: test.js:54 ~ cli.command ~ options: { '--': [], type: 'node', env: { test: 'test' } }
+{
+  "args": [],
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js build2 --env test
+🚀 ~ file: test.js:54 ~ cli.command ~ options: { '--': [], type: 'node', env: 'test' }
+{
+  "args": [],
+  "options": {
+    "--": [],
+    "type": "node",
+    "env": "test"
+  }
+}
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js build2 --env [test,dev]
+zsh: no matches found: [test,dev]
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js build2 --env [test]      
+zsh: no matches found: [test]
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js build2 --env test --env dev
+🚀 ~ file: test.js:54 ~ cli.command ~ options: { '--': [], type: 'node', env: [ 'test', 'dev' ] }
+{
+  "args": [],
+  "options": {
+    "--": [],
+    "type": "node",
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js -h 
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js -h
+
+
+Usage:
+  $  <command> [options]
+
+Commands:
+  rm [dir]                        description
+  rm [dir]                        description
+  dev                             start dev server
+  build [build]                   build project
+  build1 <entry> [...otherFiles]  Build your app
+  build2                          desc
+
+For more info, run any command with the `--help` flag:
+  $  rm --help
+  $  rm --help
+  $  dev --help
+  $  build --help
+  $  build1 --help
+  $  build2 --help
+
+Options:
+  --type <type>  Choose a project type (default: node)
+test.js/v0.0.1
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js -h
+test.js/v0.0.1
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js build2 -h 
+
+
+Usage:
+  $  <command> [options]
+
+Commands:
+  rm [dir]                        description
+  rm [dir]                        description
+  dev                             start dev server
+  build [build]                   build project
+  build1 <entry> [...otherFiles]  Build your app
+  build2                          desc
+
+For more info, run any command with the `--help` flag:
+  $  rm --help
+  $  rm --help
+  $  dev --help
+  $  build --help
+  $  build1 --help
+  $  build2 --help
+
+Options:
+  --type <type>  Choose a project type (default: node)
+test.js/v0.0.1
+
+Usage:
+  $ test.js how to use
+
+Options:
+  --env <env>    set env 
+  --type <type>  Choose a project type (default: node)
+  -h, --help     Display this message 
+
+Examples:
+--env.API_SECRET XXX
+{
+  "args": [],
+  "options": {
+    "--": [],
+    "type": "node",
+    "h": true,
+    "help": true
+  }
+}
+wangguoxuan@zhengzehuadeMacBook-Pro docpress % node src/test/test.js build2 --help
+
+
+Usage:
+  $  <command> [options]
+
+Commands:
+  rm [dir]                        description
+  rm [dir]                        description
+  dev                             start dev server
+  build [build]                   build project
+  build1 <entry> [...otherFiles]  Build your app
+  build2                          desc
+
+For more info, run any command with the `--help` flag:
+  $  rm --help
+  $  rm --help
+  $  dev --help
+  $  build --help
+  $  build1 --help
+  $  build2 --help
+
+Options:
+  --type <type>  Choose a project type (default: node)
+test.js/v0.0.1
+
+Usage:
+  $ test.js how to use
+
+Options:
+  --env <env>    set env 
+  --type <type>  Choose a project type (default: node)
+  -h, --help     Display this message 
+
+Examples:
+--env.API_SECRET XXX
+{
+  "args": [],
+  "options": {
+    "--": [],
+    "type": "node",
+    "help": true,
+    "h": true
+  }
+}
