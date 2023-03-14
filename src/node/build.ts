@@ -1,5 +1,7 @@
 import { build as viteBuild } from "vite";
 import { clientEntryPath, serverEntryPath } from "./constant";
+import path = require("path");
+import * as fs from "fs-extra";
 
 async function bundle(root: string) {
   try {
@@ -41,6 +43,37 @@ async function bundle(root: string) {
 export async function build(root: string = process.cwd()) {
   // 1、bundle--client 和 server 端
   const [clientBundle, serverBundle] = await bundle(root);
+  debugger;
   // 2、引入 server-entry
+  const serverEntryPath = path.join(root, ".temp", "ssr-entry.js");
   // 3、服务端渲染，产出 html
+  const { render } = require(serverEntryPath);
+  renderPage(root, render, clientBundle);
+}
+
+// 渲染函数
+async function renderPage(root: string, render: any, clientBundle: any) {
+  const clientChunk = clientBundle.output.find(
+    (chunk: any) => chunk?.type === "chunk" && chunk?.isEntry
+  )?.fileName;
+
+  const appHtml = render();
+  const html = `
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root">${appHtml}</div>
+    <script src="${clientChunk}"></script>
+  </body>
+</html>
+  `;
+
+  await fs.writeFile(path.join(root, "build/index.html"), html);
+  await fs.remove(path.join(root, ".temp"));
 }
