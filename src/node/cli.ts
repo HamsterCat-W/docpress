@@ -1,5 +1,6 @@
 import { cac } from "cac";
 import { createDevServer } from "./dev";
+import { build } from "./build";
 
 // 获取版本信息
 const version = require("../../package.json").version;
@@ -20,6 +21,7 @@ cli
   .command("build [root]", "build for production")
   .action(async (root: string) => {
     console.log("build", root);
+    build(root);
   });
 
 cli.parse();

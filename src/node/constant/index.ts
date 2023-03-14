@@ -14,3 +14,10 @@ export const clientEntryPath = path.join(
   "runtime",
   "client-entry.tsx"
 );
+
+export const serverEntryPath = path.join(
+  rootPath,
+  "src",
+  "runtime",
+  "ssr-entry.tsx"
+);

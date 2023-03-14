@@ -16,7 +16,7 @@ export function indexHtmlPlugin(): Plugin {
             tag: "script",
             attrs: {
               type: "module",
-              src: `/@fs/${clientEntryPath}`,
+              src: `${clientEntryPath}`,
             },
             injectTo: "body",
           },
