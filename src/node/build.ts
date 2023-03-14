@@ -43,7 +43,6 @@ async function bundle(root: string) {
 export async function build(root: string = process.cwd()) {
   // 1、bundle--client 和 server 端
   const [clientBundle, serverBundle] = await bundle(root);
-  debugger;
   // 2、引入 server-entry
   const serverEntryPath = path.join(root, ".temp", "ssr-entry.js");
   // 3、服务端渲染，产出 html
