@@ -5,6 +5,8 @@
         // 生成的 js 模式
         "module": "commonjs",
         "rootDir": ".",
-        "jsx": "react-jsx"
+        "jsx": "react-jsx",
+        // 忽略类型报错
+        "esModuleInterop": true
     }
 }
