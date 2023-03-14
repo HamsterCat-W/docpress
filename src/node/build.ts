@@ -1,7 +1,7 @@
 import { build as viteBuild } from "vite";
 import { clientEntryPath, serverEntryPath } from "./constant";
-import path = require("path");
-import * as fs from "fs-extra";
+import fs from "fs-extra";
+import path from "path";
 
 async function bundle(root: string) {
   try {
@@ -46,7 +46,7 @@ export async function build(root: string = process.cwd()) {
   // 2、引入 server-entry
   const serverEntryPath = path.join(root, ".temp", "ssr-entry.js");
   // 3、服务端渲染，产出 html
-  const { render } = require(serverEntryPath);
+  const { render } = await import(serverEntryPath);
   renderPage(root, render, clientBundle);
 }
 
