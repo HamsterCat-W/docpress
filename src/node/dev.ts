@@ -1,6 +1,6 @@
-import { createServer as createViteDevServer } from "vite";
-import { indexHtmlPlugin } from "./plugin/indexHtml";
-import pluginInReact from "@vitejs/plugin-react";
+import { createServer as createViteDevServer } from 'vite'
+import { indexHtmlPlugin } from './plugin/indexHtml'
+import pluginInReact from '@vitejs/plugin-react'
 
 export function createDevServer(root: string = process.cwd()) {
   return createViteDevServer({
@@ -8,8 +8,8 @@ export function createDevServer(root: string = process.cwd()) {
     server: {
       port: 7779,
       host: true,
-      open: "/",
+      open: '/'
     },
-    plugins: [indexHtmlPlugin(), pluginInReact()],
-  });
+    plugins: [indexHtmlPlugin(), pluginInReact()]
+  })
 }

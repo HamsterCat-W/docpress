@@ -1,27 +1,27 @@
-import { cac } from "cac";
-import { createDevServer } from "./dev";
-import { build } from "./build";
+import { cac } from 'cac'
+import { createDevServer } from './dev'
+import { build } from './build'
 
 // 获取版本信息
-const version = require("../../package.json").version;
+const version = require('../../package.json').version
 
-const cli = cac("docpress").version(version).help();
+const cli = cac('docpress').version(version).help()
 
 cli
-  .command("dev [root]", "start dev server")
-  .alias("dev")
+  .command('dev [root]', 'start dev server')
+  .alias('dev')
   .action(async (root: string) => {
     // console.log("dev", root);
-    const server = await createDevServer(root);
-    await server.listen();
-    server.printUrls();
-  });
+    const server = await createDevServer(root)
+    await server.listen()
+    server.printUrls()
+  })
 
 cli
-  .command("build [root]", "build for production")
+  .command('build [root]', 'build for production')
   .action(async (root: string) => {
-    console.log("build", root);
-    build(root);
-  });
+    console.log('build', root)
+    build(root)
+  })
 
-cli.parse();
+cli.parse()

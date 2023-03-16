@@ -6,9 +6,9 @@
 
 // 异步环境下
 async function foo() {
-  const { add } = await import("./util.mjs");
-  let res = add(1, 2);
-  console.log("🚀 ~ file: add.cjs:11 ~ foo ~ res:", res);
+  const { add } = await import('./util.mjs')
+  let res = add(1, 2)
+  console.log('🚀 ~ file: add.cjs:11 ~ foo ~ res:', res)
 }
 
-foo();
+foo()
